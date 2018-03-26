@@ -1,8 +1,8 @@
 //
-//  Events.swift
-//  StarShareModulePodSpec
+//  Event.swift
+//  Titan
 //
-//  Created by BUBUKO on 2018/3/21.
+//  Created by BUBUKO on 2018/3/23.
 //  Copyright © 2018年 gakki. All rights reserved.
 //
 
@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import UserNotifications
 
-public enum ModuleEventType: Int {
+public enum EventType: Int {
+  
   case setupEvent = 0
   case tearDownEvent
   case splashEvent
@@ -31,7 +32,6 @@ public enum ModuleEventType: Int {
   case continueUserActivityEvent
   case didFailToContinueUserActivityEvent
   case didUpdateUserActivityEvent
-  case didCustomEvent = 1000
 }
 
 public typealias NotificationResultHandler = (UIBackgroundFetchResult) -> Void

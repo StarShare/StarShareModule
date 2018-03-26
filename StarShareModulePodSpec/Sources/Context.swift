@@ -1,8 +1,8 @@
 //
 //  Context.swift
-//  StarShareModulePodSpec
+//  Titan
 //
-//  Created by BUBUKO on 2018/3/21.
+//  Created by BUBUKO on 2018/3/22.
 //  Copyright © 2018年 gakki. All rights reserved.
 //
 
@@ -16,11 +16,9 @@ public enum EnvironmentType {
 }
 
 public class Context {
-  
   public static let shared = Context()
-  public var env = EnvironmentType.prod
-  public var config = Config()
   
+  public var env = EnvironmentType.prod
   public var application: UIApplication!
   public var launchOptions: [AnyHashable: Any] = [:]
   
