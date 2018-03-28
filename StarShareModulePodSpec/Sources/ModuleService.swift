@@ -32,11 +32,13 @@ public class ModuleService {
     
     titan_log(
       "模块状态被禁用:\(moduleConfig.name) -> \(moduleConfig.version)",
-      identifier: "ModuleService")
+      identifier: "ModuleService"
+    )
     removeModule(moduleConfig.name)
     titan_log(
       "移除被禁用模块:\(moduleConfig.name) -> \(moduleConfig.version)",
-      identifier: "ModuleService")
+      identifier: "ModuleService"
+    )
     return nil
   }
   

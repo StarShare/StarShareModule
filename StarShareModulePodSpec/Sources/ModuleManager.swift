@@ -29,6 +29,7 @@ public class ModuleManager {
     switch eventType {
     case .setupEvent: handleModulesSetupEvent()
     case .tearDownEvent: handleModulesTearDownEvent()
+    case let .didCustomEvent(name,object): handleModulesCustomEvent(name: name, object: object)
     default: handleModuleEvent(eventType)
     }
   }
@@ -51,10 +52,18 @@ public class ModuleManager {
   }
   
   func handleModulesTearDownEvent() {
-    for index in (modules.values.count - 1)...0 {
-      modules.map({ (key, value) -> Module in
-        value
-      }).filter({ $0.getEnable() == true })[index].modTearDown(Context.shared)
+    for instance in modules.map({ (key, value) -> Module in
+      value
+    }).filter({ $0.getEnable() == true }) {
+      instance.modTearDown(Context.shared)
+    }
+  }
+  
+  func handleModulesCustomEvent(name: EventName, object: Any?) {
+    for instance in modules.map({ (key, value) -> Module in
+      value
+    }).filter({ $0.getEnable() == true && $0.getCustomEvents().contains(name) }) {
+      instance.modDidCustomEvent(Context.shared, name: name, object: object)
     }
   }
   

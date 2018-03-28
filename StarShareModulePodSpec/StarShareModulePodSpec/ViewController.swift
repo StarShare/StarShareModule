@@ -12,6 +12,16 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    ModuleManager.shared.doEvent(.didCustomEvent(name: EventName("loginSuccess"), object: "hello word!"))
+    
+    do {
+      if let service = try ServiceManager.shared.create(service: ServiceName.SignService) as? SignService {
+        print("User ID: \(service.login())")
+      }
+    } catch {
+      print("fuckUp")
+    }
   }
 }
 

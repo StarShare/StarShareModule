@@ -31,6 +31,9 @@ public class ModuleLoader {
       "加载:\(moduleConfig.name) -> \(moduleConfig.version)",
       identifier: "ModuleLoader"
     )
-    return cls.init(moduleConfig)
+    
+    let module = cls.init(moduleConfig)
+    module.registerServices()
+    return module
   }
 }

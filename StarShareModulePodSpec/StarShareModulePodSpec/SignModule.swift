@@ -15,6 +15,8 @@ class SignModule: Module {
   private var version: String
   private var creation: Date
   private var enable = true
+  private var services: [ServiceName:AnyClass]
+  private var customEvents: [EventName]
   
   required init(_ config: ModuleConfig) {
     name = config.name
@@ -22,6 +24,8 @@ class SignModule: Module {
     version = config.version
     enable = config.enabled
     creation = Date()
+    services = config.services
+    customEvents = config.customEvents
   }
   
   func getEnable() -> Bool {
@@ -38,6 +42,14 @@ class SignModule: Module {
   
   func getCreation() -> Date {
     return creation
+  }
+  
+  func getSercvices() -> [ServiceName:AnyClass] {
+    return services
+  }
+  
+  func getCustomEvents() -> [EventName] {
+    return customEvents
   }
   
   func destroy() {
@@ -69,5 +81,9 @@ extension SignModule {
   
   func modWillTerminate(_ context: Context) {
     print("SignModule modWillTerminate")
+  }
+  
+  func modDidCustomEvent(_ context: Context, name: EventName, object: Any?) {
+    print("SignModule modDidCustomEvent: name -> \(name.rawValue) | object -> \(object ?? "nil")")
   }
 }

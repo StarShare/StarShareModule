@@ -32,12 +32,17 @@ public protocol Module {
   func modContinueUserActivity(_ context: Context)
   func modDidFail(toContinueUserActivity context: Context)
   func modDidUpdateContinueUserActivity(_ context: Context)
+  func modDidCustomEvent(_ context: Context, name: EventName, object: Any?)
   
+  func registerServices()
   func getEnable() -> Bool
   func getName() -> String
   func getVersion() -> String
   func getCreation() -> Date
+  func getSercvices() -> [ServiceName:AnyClass]
+  func getCustomEvents() -> [EventName]
   func destroy()
+  func description() -> String
 }
 
 public extension Module {
@@ -63,4 +68,30 @@ public extension Module {
   func modContinueUserActivity(_ context: Context) {}
   func modDidFail(toContinueUserActivity context: Context) {}
   func modDidUpdateContinueUserActivity(_ context: Context) {}
+  func modDidCustomEvent(_ context: Context, name: EventName, object: Any?) {}
+}
+
+public extension Module {
+  
+  func description() -> String {
+    
+    let customEvents = getCustomEvents().map { $0.rawValue }
+    return "Module Description: " +
+           "<name:\(getName())>" +
+           "<version:\(getVersion())>" +
+           "<creation:\(getCreation())>" +
+           "<enable:\(getEnable() ? "true" : "false")>" +
+           "<customEvents:\(customEvents)>"
+  }
+}
+
+public extension Module {
+  
+  func registerServices() {
+    
+    let services = getSercvices()
+    services.forEach { (name,cls) in
+      ServiceManager.shared.register(service: name, implClass: cls)
+    }
+  }
 }

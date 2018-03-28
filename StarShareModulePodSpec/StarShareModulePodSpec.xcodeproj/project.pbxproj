@@ -15,7 +15,6 @@
 		31A84BD62068C5BB008F9938 /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A84BCB2068C5BA008F9938 /* ModuleManager.swift */; };
 		31A84BD72068C5BB008F9938 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A84BCC2068C5BA008F9938 /* Context.swift */; };
 		31A84BD82068C5BB008F9938 /* ModuleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A84BCD2068C5BA008F9938 /* ModuleLoader.swift */; };
-		31A84BD92068C5BB008F9938 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A84BCE2068C5BA008F9938 /* Action.swift */; };
 		31A84BDA2068C5BB008F9938 /* ModuleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A84BCF2068C5BA008F9938 /* ModuleLogger.swift */; };
 		31A84BDB2068C5BB008F9938 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A84BD02068C5BA008F9938 /* Module.swift */; };
 		31C6103820624FF9002ADC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6103720624FF9002ADC43 /* AppDelegate.swift */; };
@@ -26,6 +25,10 @@
 		31C6104D20624FF9002ADC43 /* StarShareModulePodSpecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6104C20624FF9002ADC43 /* StarShareModulePodSpecTests.swift */; };
 		31C6105820624FF9002ADC43 /* StarShareModulePodSpecUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6105720624FF9002ADC43 /* StarShareModulePodSpecUITests.swift */; };
 		31C6107120626568002ADC43 /* SignModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6107020626568002ADC43 /* SignModule.swift */; };
+		31E08A7F206B7A5C009B7787 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08A7E206B7A5C009B7787 /* Service.swift */; };
+		31E08A81206B83AD009B7787 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08A80206B83AD009B7787 /* ServiceManager.swift */; };
+		31E08A83206B8A23009B7787 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08A82206B8A23009B7787 /* ServiceError.swift */; };
+		31E08A85206B9165009B7787 /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08A84206B9165009B7787 /* SignService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +57,6 @@
 		31A84BCB2068C5BA008F9938 /* ModuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
 		31A84BCC2068C5BA008F9938 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		31A84BCD2068C5BA008F9938 /* ModuleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLoader.swift; sourceTree = "<group>"; };
-		31A84BCE2068C5BA008F9938 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		31A84BCF2068C5BA008F9938 /* ModuleLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLogger.swift; sourceTree = "<group>"; };
 		31A84BD02068C5BA008F9938 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		31C6103420624FF9002ADC43 /* StarShareModulePodSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarShareModulePodSpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,10 @@
 		31C6105720624FF9002ADC43 /* StarShareModulePodSpecUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarShareModulePodSpecUITests.swift; sourceTree = "<group>"; };
 		31C6105920624FF9002ADC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C6107020626568002ADC43 /* SignModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModule.swift; sourceTree = "<group>"; };
+		31E08A7E206B7A5C009B7787 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		31E08A80206B83AD009B7787 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		31E08A82206B8A23009B7787 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		31E08A84206B9165009B7787 /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 				31C6104020624FF9002ADC43 /* LaunchScreen.storyboard */,
 				31C6104320624FF9002ADC43 /* Info.plist */,
 				31C6107020626568002ADC43 /* SignModule.swift */,
+				31E08A84206B9165009B7787 /* SignService.swift */,
 			);
 			path = StarShareModulePodSpec;
 			sourceTree = "<group>";
@@ -154,7 +161,6 @@
 		31C610652062501D002ADC43 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				31A84BCE2068C5BA008F9938 /* Action.swift */,
 				31A84BCC2068C5BA008F9938 /* Context.swift */,
 				31A84BC62068C5BA008F9938 /* Event.swift */,
 				31A84BD02068C5BA008F9938 /* Module.swift */,
@@ -165,6 +171,9 @@
 				31A84BCF2068C5BA008F9938 /* ModuleLogger.swift */,
 				31A84BCB2068C5BA008F9938 /* ModuleManager.swift */,
 				31A84BC92068C5BA008F9938 /* ModuleService.swift */,
+				31E08A7E206B7A5C009B7787 /* Service.swift */,
+				31E08A82206B8A23009B7787 /* ServiceError.swift */,
+				31E08A80206B83AD009B7787 /* ServiceManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -304,19 +313,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A84BD62068C5BB008F9938 /* ModuleManager.swift in Sources */,
-				31A84BD92068C5BB008F9938 /* Action.swift in Sources */,
+				31E08A7F206B7A5C009B7787 /* Service.swift in Sources */,
 				31A84BD42068C5BB008F9938 /* ModuleService.swift in Sources */,
 				31A84BDA2068C5BB008F9938 /* ModuleLogger.swift in Sources */,
 				31A84BD82068C5BB008F9938 /* ModuleLoader.swift in Sources */,
 				31A84BD12068C5BB008F9938 /* Event.swift in Sources */,
 				31A84BD72068C5BB008F9938 /* Context.swift in Sources */,
 				31C6103A20624FF9002ADC43 /* ViewController.swift in Sources */,
+				31E08A83206B8A23009B7787 /* ServiceError.swift in Sources */,
 				31C6103820624FF9002ADC43 /* AppDelegate.swift in Sources */,
 				31A84BD52068C5BB008F9938 /* ModuleError.swift in Sources */,
 				31A84BD22068C5BB008F9938 /* ModuleConfig.swift in Sources */,
 				31A84BDB2068C5BB008F9938 /* Module.swift in Sources */,
+				31E08A85206B9165009B7787 /* SignService.swift in Sources */,
 				31A84BD32068C5BB008F9938 /* ModuleDelegate.swift in Sources */,
 				31C6107120626568002ADC43 /* SignModule.swift in Sources */,
+				31E08A81206B83AD009B7787 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

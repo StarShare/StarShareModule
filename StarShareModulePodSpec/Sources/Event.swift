@@ -10,9 +10,30 @@ import Foundation
 import UIKit
 import UserNotifications
 
-public enum EventType: Int {
+public struct EventName: RawRepresentable, Equatable, Hashable {
+  public typealias RawValue = String
+  public private(set) var rawValue: String
   
-  case setupEvent = 0
+  public var hashValue: Int {
+    return rawValue.hashValue
+  }
+  
+  public init(_ rawValue: String) {
+    self.rawValue = rawValue
+  }
+  
+  public init(rawValue: String) {
+    self.rawValue = rawValue
+  }
+  
+  public static func ==(lhs: EventName, rhs: EventName) -> Bool {
+    return lhs.rawValue == rhs.rawValue
+  }
+}
+
+public enum EventType {
+  
+  case setupEvent
   case tearDownEvent
   case splashEvent
   case quickActionEvent
@@ -32,6 +53,7 @@ public enum EventType: Int {
   case continueUserActivityEvent
   case didFailToContinueUserActivityEvent
   case didUpdateUserActivityEvent
+  case didCustomEvent(name: EventName, object: Any?)
 }
 
 public typealias NotificationResultHandler = (UIBackgroundFetchResult) -> Void

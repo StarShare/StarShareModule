@@ -17,7 +17,11 @@ class AppDelegate: ModuleDelegate {
     let signModuleConfig = ModuleConfig(
       name: "认证模块",
       version: "v0.0.1",
-      moduleClass: SignModule.self
+      moduleClass: SignModule.self,
+      services: [
+        ServiceName.SignService:SignService.self
+      ],
+      customEvents: [EventName("loginSuccess")]
     )
     
     if let module = ModuleService.shared.loadAndRegister(signModuleConfig) {
@@ -27,12 +31,12 @@ class AppDelegate: ModuleDelegate {
     
     if let module = ModuleManager.shared.find("认证模块") {
       titan_log((module.getName()) + "获取成功")
-      print(module)
+      print(module.description())
     }
     
     if let module = ModuleManager.shared.find(SignModule.self) {
       module.destroy()
-      print(module)
+      print(module.description())
     }
     
     _ = super.application(application, didFinishLaunchingWithOptions: launchOptions)

@@ -14,6 +14,8 @@ public enum ModuleError: Swift.Error {
   case missModuleName
   case missModuleVersion
   case moduleDisable
+  case serviceHasBeenRegisted
+  case serviceInstantiationFailure
 }
 
 extension ModuleError {
@@ -21,13 +23,17 @@ extension ModuleError {
   public var localizedDescription: String {
     switch self {
     case .notComplyModuleProtocol:
-      return ""
+      return "you need comply Module protocol."
     case .missModuleName:
-      return ""
+      return "miss Module name."
     case .missModuleVersion:
-      return ""
+      return "miss Module version."
     case .moduleDisable:
-      return ""
+      return "Module disable."
+    case .serviceHasBeenRegisted:
+      return "Service has been registed."
+    case .serviceInstantiationFailure:
+      return "Service instantiation failure."
     }
   }
 }
