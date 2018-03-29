@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         print("User ID: \(service.login())")
       }
     } catch {
-      print("fuckUp")
+      print("create SignService failed.")
     }
   }
 }

@@ -23,7 +23,7 @@ public class ModuleService {
         return module
       } catch let e {
         titan_log(
-          "加载失败:\(moduleConfig.name) -> \(moduleConfig.version) : \(e.localizedDescription)",
+          "mod load failed:\(moduleConfig.name) -> \(moduleConfig.version) : \(e.localizedDescription)",
           identifier: "ModuleService"
         )
         return nil
@@ -31,12 +31,12 @@ public class ModuleService {
     }
     
     titan_log(
-      "模块状态被禁用:\(moduleConfig.name) -> \(moduleConfig.version)",
+      "mod disabled:\(moduleConfig.name) -> \(moduleConfig.version)",
       identifier: "ModuleService"
     )
     removeModule(moduleConfig.name)
     titan_log(
-      "移除被禁用模块:\(moduleConfig.name) -> \(moduleConfig.version)",
+      "remove disabled mod:\(moduleConfig.name) -> \(moduleConfig.version)",
       identifier: "ModuleService"
     )
     return nil

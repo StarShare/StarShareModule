@@ -133,7 +133,7 @@ public class ModuleManager {
     modules[module.getName()] = module
     
     titan_log(
-      "注册:\(module.getName()) -> \(module.getVersion())",
+      "register mod:\(module.getName()) -> \(module.getVersion())",
       identifier: "ModuleManager"
     )
     return oldModule
@@ -147,7 +147,7 @@ public class ModuleManager {
       modules.removeValue(forKey: name)
       moduleClasses.removeValue(forKey: name)
       titan_log(
-        "移除:\(oldModule!.getName()) -> \(oldModule!.getVersion())",
+        "remove mod:\(oldModule!.getName()) -> \(oldModule!.getVersion())",
         identifier: "ModuleManager"
       )
     }
@@ -163,7 +163,7 @@ public class ModuleManager {
     moduleClasses.removeAll()
     
     titan_log(
-      "销毁所有模块！",
+      "destroy all mod",
       identifier: "ModuleManager"
     )
   }

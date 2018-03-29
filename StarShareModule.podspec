@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "StarShareModule"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "StarShareModule written in Swift"
   s.description  = <<-EOS
   Something.............................................................

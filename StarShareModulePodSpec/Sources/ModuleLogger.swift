@@ -20,7 +20,7 @@ public final class ModuleLogger {
   static let shared = ModuleLogger()
   public let isVerbose: Bool
   
-  fileprivate let loggerId = "Titan_Logger"
+  fileprivate let loggerId = "Module_Logger"
   fileprivate let dateFormatString = "dd/MM/yyyy HH:mm:ss"
   fileprivate let dateFormatter = DateFormatter()
   fileprivate let separator = ", "

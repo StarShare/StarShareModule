@@ -28,7 +28,7 @@ public class ModuleLoader {
     let cls: Module.Type = moduleConfig.moduleClass
     
     titan_log(
-      "加载:\(moduleConfig.name) -> \(moduleConfig.version)",
+      "load mod:\(moduleConfig.name) -> \(moduleConfig.version)",
       identifier: "ModuleLoader"
     )
     

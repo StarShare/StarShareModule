@@ -23,13 +23,13 @@ public class ServiceManager {
   func register(service: ServiceName, implClass: AnyClass) {
     if !(implClass is Service.Type) {
       titan_log(
-        "注册服务失败:\(service.rawValue) -> \(NSStringFromClass(implClass)) module does not comply with Service protocol",
+        "register service failed:\(service.rawValue) -> \(NSStringFromClass(implClass)) module does not comply with Service protocol",
         identifier: "ServiceManager"
       )
     }
     if checkValid(service: service) {
       titan_log(
-        "服务已注册过:\(service.rawValue) -> protocol has been registed",
+        "service already register:\(service.rawValue) -> protocol has been registed",
         identifier: "ServiceManager"
       )
     }
@@ -42,14 +42,14 @@ public class ServiceManager {
   func create(service: ServiceName) throws -> AnyObject {
     if !checkValid(service: service) {
       titan_log(
-        "服务未注册:\(service.rawValue) -> protocol has been registed",
+        "service need register first:\(service.rawValue) -> protocol has been registed",
         identifier: "ServiceManager"
       )
       throw ServiceError.serviceHasBeenRegisted
     }
     guard let implClass = try serviceImplClass(service) as? Service.Type else {
       titan_log(
-        "服务Class创建失败:\(service.rawValue) -> service Impl Class is nill or not comply Service",
+        "service class create failed:\(service.rawValue) -> service Impl Class is nill or not comply Service",
         identifier: "ServiceManager"
       )
       throw ServiceError.serviceInstantiationFailure
