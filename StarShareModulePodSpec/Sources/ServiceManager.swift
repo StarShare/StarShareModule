@@ -9,7 +9,7 @@
 import Foundation
 
 public class ServiceManager {
-  static let shared = ServiceManager()
+  public static let shared = ServiceManager()
   
   var allServices: [ServiceName: String] = [:]
   var safeServices: [ServiceName: String] {
@@ -20,7 +20,7 @@ public class ServiceManager {
   }
   lazy var lock = NSRecursiveLock()
   
-  func register(service: ServiceName, implClass: AnyClass) {
+  public func register(service: ServiceName, implClass: AnyClass) {
     if !(implClass is Service.Type) {
       titan_log(
         "register service failed:\(service.rawValue) -> \(NSStringFromClass(implClass)) module does not comply with Service protocol",
@@ -39,7 +39,7 @@ public class ServiceManager {
     lock.unlock()
   }
   
-  func create(service: ServiceName) throws -> AnyObject {
+  public func create(service: ServiceName) throws -> AnyObject {
     if !checkValid(service: service) {
       titan_log(
         "service need register first:\(service.rawValue) -> protocol has been registed",

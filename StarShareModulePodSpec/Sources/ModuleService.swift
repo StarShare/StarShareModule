@@ -9,12 +9,12 @@
 import Foundation
 
 public class ModuleService {
-  static let shared = ModuleService()
+  public static let shared = ModuleService()
   private let moduleManager = ModuleManager.shared
   private let moduleLoader  = ModuleLoader.shared
   
   @discardableResult
-  func loadAndRegister(_ moduleConfig: ModuleConfig) -> Module? {
+  public func loadAndRegister(_ moduleConfig: ModuleConfig) -> Module? {
     
     if moduleConfig.enabled == true {
       do {
@@ -43,7 +43,7 @@ public class ModuleService {
   }
   
   @discardableResult
-  private func removeModule(_ moduleName: String) -> Module? {
+  public func removeModule(_ moduleName: String) -> Module? {
     let removed = moduleManager.remove(moduleName)
     return removed
   }

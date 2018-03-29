@@ -9,9 +9,9 @@
 import Foundation
 
 public class ModuleLoader {
-  static let shared = ModuleLoader()
+  public static let shared = ModuleLoader()
   
-  func load(_ moduleConfig: ModuleConfig) throws -> Module {
+  public func load(_ moduleConfig: ModuleConfig) throws -> Module {
     
     guard moduleConfig.enabled == true else {
       throw ModuleError.moduleDisable

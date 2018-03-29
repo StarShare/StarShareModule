@@ -18,13 +18,13 @@ public class ModuleConfig {
   public var services: [ServiceName: AnyClass]
   public var customEvents: [EventName]
   
-  init(name: String = "",
-       desc: String = "",
-       version: String = "",
-       enabled: Bool = true,
-       moduleClass: Module.Type,
-       services: [ServiceName: AnyClass] = [:],
-       customEvents: [EventName] = []) {
+  public init(name: String = "",
+              desc: String = "",
+              version: String = "",
+              enabled: Bool = true,
+              moduleClass: Module.Type,
+              services: [ServiceName: AnyClass] = [:],
+              customEvents: [EventName] = []) {
     self.name = name
     self.desc = desc
     self.version = version

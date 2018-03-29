@@ -9,7 +9,7 @@
 import Foundation
 
 public class ModuleManager {
-  static let shared = ModuleManager()
+  public static let shared = ModuleManager()
   
   private var modules: [String:Module] = [:]
   private var moduleClasses: [String:String] = [:]
@@ -25,7 +25,7 @@ public class ModuleManager {
     self.context = Context.shared
   }
   
-  func doEvent(_ eventType: EventType) {
+  public func doEvent(_ eventType: EventType) {
     switch eventType {
     case .setupEvent: handleModulesSetupEvent()
     case .tearDownEvent: handleModulesTearDownEvent()
@@ -96,11 +96,11 @@ public class ModuleManager {
     }
   }
   
-  func find(_ name: String) -> Module? {
+  public func find(_ name: String) -> Module? {
     return modules[name]
   }
   
-  func find(_ type: Module.Type) -> Module? {
+  public func find(_ type: Module.Type) -> Module? {
     let className = "\(type)"
     let name = moduleClasses.filter({ (key,value) -> Bool in
       return value == className
@@ -114,14 +114,14 @@ public class ModuleManager {
     return modules[name!]
   }
   
-  func getModules() -> [Module] {
+  public func getModules() -> [Module] {
     return modules.map({ (key,value) -> Module in
       return value
     })
   }
   
   @discardableResult
-  func register(_ module: Module) -> Module? {
+  public func register(_ module: Module) -> Module? {
     let oldModule = find(module.getName())
     if oldModule != nil {
       remove(oldModule!.getName())
@@ -140,7 +140,7 @@ public class ModuleManager {
   }
   
   @discardableResult
-  func remove(_ name: String) -> Module? {
+  public func remove(_ name: String) -> Module? {
     let oldModule = find(name)
     if oldModule != nil {
       oldModule!.destroy()
@@ -155,7 +155,7 @@ public class ModuleManager {
     return oldModule
   }
   
-  func destroy() {
+  public func destroy() {
     modules.forEach { (key,module) in
       module.destroy()
     }
